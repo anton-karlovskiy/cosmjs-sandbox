@@ -26,5 +26,5 @@ As you progress with your exercise, you can look at the _solutions_ in their res
 * `send-tokens-local`, [diff](https://github.com/b9lab/cosmjs-sandbox/compare/send-tokens...send-tokens-local)
 
 ## TODOs
-- Set up `dotenv` for storing a mnemonic.
+- Set up `dotenv` for storing a mnemonic. (DONE)
 - Handle gas fee setting at `signingClient.sendTokens` in a more automatic way instead of hardcoding.
