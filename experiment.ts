@@ -1,4 +1,3 @@
-import { readFile } from 'fs/promises'
 import {
   DirectSecp256k1HdWallet,
   OfflineDirectSigner
@@ -7,6 +6,9 @@ import {
   SigningStargateClient,
   StargateClient
 } from '@cosmjs/stargate'
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const RPC = 'https://rpc-juno.itastakers.com'
 const SENDER_ACCOUNT_ADDRESS = 'juno1umvvpydnheghmp9ly79jcxfk0s4s8c40a7ltah'
@@ -14,7 +16,7 @@ const RECIPIENT_ACCOUNT_ADDRESS = 'juno1kv5x8r4qa4lkal0hhyq6lr4vs4awu0sdrk7k95'
 const DENOM = 'ujuno'
 
 const getAliceSignerFromMnemonic = async (): Promise<OfflineDirectSigner> => {
-  return DirectSecp256k1HdWallet.fromMnemonic((await readFile('./testnet.alice.mnemonic.key')).toString(), {
+  return DirectSecp256k1HdWallet.fromMnemonic(`${process.env.MNEMONIC}`, {
     prefix: 'juno'
   })
 }
