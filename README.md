@@ -27,3 +27,4 @@ As you progress with your exercise, you can look at the _solutions_ in their res
 
 ## TODOs
 - Set up `dotenv` for storing a mnemonic.
+- Handle gas fee setting at `signingClient.sendTokens` in a more automatic way instead of hardcoding.
